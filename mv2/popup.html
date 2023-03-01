@@ -1,0 +1,77 @@
+<html>
+
+<head>
+    <style>
+        body {
+            width: 200px;
+            height: 200px;
+            margin: 0;
+            padding: 10px;
+            font-size: 18px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            user-select: none;
+            background: black;
+        }
+
+        .settings {
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 10;
+            border: 3px solid black;
+            background-image: linear-gradient(to right, #aa332d, #e9524a);
+            display: flex;
+            position: absolute;
+            color: lightgrey;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            font-size: small;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        #width,
+        #height {
+            width: 50%;
+            margin: 10px 0;
+        }
+
+        input[type=number] {
+            border-radius: 5px;
+            padding: 10px;
+            outline: none;
+            border: none;
+            background: lightgrey;
+        }
+
+        input[type=radio],
+        label {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="settings">
+        <div style="color: black;">
+            <label for="png">PNG</label>
+            <input type="radio" name="format" id="png" checked>
+            <label for="jpeg">JPEG</label>
+            <input type="radio" name="format" id="jpeg">
+            <label for="webp">WEBP</label>
+            <input type="radio" name="format" id="webp">
+        </div>
+        <div style="background: rgb(56, 56, 56); padding: 5px 0; border-radius: 5px;">
+            <label for="width">width (px)</label>
+            <input min="1" max="30000" placeholder="auto" type="number" id="width">
+            <br>
+            <label for="height">height (px)</label>
+            <input min="1" max="30000" placeholder="auto" type="number" id="height">
+        </div>
+    </div>
+    <script src="popup.js"></script>
+</body>
+
+</html>
